@@ -1,6 +1,7 @@
 ; -*- lexical-binding: t -*-
 
-(defun bci/linkify-header-content (link-destination)
+;;;###autoload
+(defun bci-linkify-header-content (link-destination)
   "Linkify Org header text."
   (interactive "MDestination: ")
   (save-excursion
@@ -12,3 +13,5 @@
             (goto-char content-start)
             (delete-region content-start content-end)
             (org-insert-link nil link-destination content)))))))
+
+(provide 'bci-linkify)
